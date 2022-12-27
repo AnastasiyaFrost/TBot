@@ -11,9 +11,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Repository
-public interface NotificationTaskRepository extends JpaRepository<NotificationTask, Id> {
-    LocalDateTime now = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
-
-    @Query(value = "SELECT * FROM DB_teleBot WHERE notificationSendDatetime = now", nativeQuery = true)
-    List<NotificationTask> getTasksToSend();
+public interface NotificationTaskRepository extends JpaRepository<NotificationTask, Long> {
+    List<NotificationTask> findAllByNotificationSendDatetime(LocalDateTime localDateTime);
 }

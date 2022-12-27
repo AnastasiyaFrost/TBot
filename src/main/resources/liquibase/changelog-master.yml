@@ -4,7 +4,7 @@ databaseChangeLog:
       author: agrebneva
       changes:
         - createTable:
-            tableName: task
+            tableName: notification_task
             columns:
               - column:
                   name: id
@@ -20,7 +20,7 @@ databaseChangeLog:
                     unique: true
                     nullable: false
               - column:
-                  name: notification_text
+                  name: message_content
                   type: TEXT
                   constraints:
                     nullable: false

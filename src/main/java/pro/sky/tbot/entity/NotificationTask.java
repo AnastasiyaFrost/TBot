@@ -12,7 +12,7 @@ import java.util.Objects;
 public class NotificationTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected long id;
+    private Long id;
 
     private Long chatId;
     private String messageContent;
